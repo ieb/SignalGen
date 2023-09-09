@@ -7,8 +7,8 @@ const int W_CLK_PIN = 13;
 const int FQ_UD_PIN = 8;
 const int RESET_PIN = 9;
 
-double freq = 400000;
-double inc = 100;
+double freq = 10000;
+double inc = 10;
 double trimFreq = 124999500;
 
 int phase = 0;
@@ -32,7 +32,7 @@ void loop(void) {
   freq += inc;
   setFreq();
   delay(100);
-  if ( freq > 800000) freq = 100000;	
+  if ( freq > 40000) freq = 10000;	
   int c = Serial.read();
   switch(c) {
     case '0': inc = 1.0 ; break;
